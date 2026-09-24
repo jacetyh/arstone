@@ -150,7 +150,8 @@ function initMobileMenu() {
   const navMenu = document.getElementById('navMenu');
   if (!menuBtn || !navMenu) return;
 
-  menuBtn.addEventListener('click', () => {
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     navMenu.classList.toggle('mobile-open');
   });
 
@@ -158,6 +159,13 @@ function initMobileMenu() {
     link.addEventListener('click', () => {
       navMenu.classList.remove('mobile-open');
     });
+  });
+
+  // Zamykanie menu po kliknięciu poza obszar nawigacji
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+      navMenu.classList.remove('mobile-open');
+    }
   });
 }
 
@@ -327,7 +335,7 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 
-// Obsługa przycisków i klawiatury w Lightboxie
+// Obsługa przycisków, klawiatury oraz gestów dotykowych (Swipe) w Lightboxie
 document.getElementById('lightboxCloseBtn')?.addEventListener('click', closeLightbox);
 document.getElementById('lightboxPrevBtn')?.addEventListener('click', () => showLightboxImage(currentImageIndex - 1));
 document.getElementById('lightboxNextBtn')?.addEventListener('click', () => showLightboxImage(currentImageIndex + 1));
@@ -340,6 +348,32 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') showLightboxImage(currentImageIndex - 1);
   if (e.key === 'ArrowRight') showLightboxImage(currentImageIndex + 1);
 });
+
+// Gesty dotykowe (Swipe na smartfonach)
+let touchStartX = 0;
+let touchStartY = 0;
+const lightboxStage = document.querySelector('.lightbox-stage');
+
+lightboxStage?.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+lightboxStage?.addEventListener('touchend', (e) => {
+  const touchEndX = e.changedTouches[0].screenX;
+  const touchEndY = e.changedTouches[0].screenY;
+  const diffX = touchEndX - touchStartX;
+  const diffY = touchEndY - touchStartY;
+
+  // Sprawdź czy to poziomy swipe, a nie przewijanie pionowe
+  if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+    if (diffX < 0) {
+      showLightboxImage(currentImageIndex + 1); // Swipe w lewo -> Następne
+    } else {
+      showLightboxImage(currentImageIndex - 1); // Swipe w prawo -> Poprzednie
+    }
+  }
+}, { passive: true });
 
 /* ==========================================================================
    ANIMACJA HTML5: Stukanie młotkiem w kamień -> Transformacja w blat

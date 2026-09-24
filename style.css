@@ -607,7 +607,7 @@ section {
 /* Siatka projektów */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 2rem;
 }
 
@@ -1077,13 +1077,16 @@ textarea.form-control {
 /* ==========================================================================
    Responsywność (Media Queries)
    ========================================================================== */
+/* ==========================================================================
+   Responsywność (Media Queries)
+   ========================================================================== */
 @media (max-width: 992px) {
-  .hero-title {
-    font-size: 2.75rem;
+  .section-title {
+    font-size: 2.15rem;
   }
   .contact-wrapper {
     grid-template-columns: 1fr;
-    padding: 2.5rem;
+    padding: 2.25rem 1.75rem;
   }
   .footer-top {
     grid-template-columns: 1fr;
@@ -1092,6 +1095,14 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
+  section {
+    padding: 3.5rem 0;
+  }
+
+  .container {
+    padding: 0 1.15rem;
+  }
+
   .nav-menu {
     display: none;
     position: absolute;
@@ -1101,60 +1112,131 @@ textarea.form-control {
     background: var(--nav-bg);
     flex-direction: column;
     padding: 1.5rem;
+    gap: 1.25rem;
     border-bottom: 1px solid var(--border-subtle);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
   }
 
   .nav-menu.mobile-open {
     display: flex;
+    animation: slideDownMobile 0.25s ease-out;
+  }
+
+  @keyframes slideDownMobile {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
   }
 
+  /* Dopasowanie grafiki Hero, aby na smartfonie zachowała proporcje i cały napis był widoczny */
   .hero-backdrop-stage {
-    min-height: 52vh;
+    min-height: auto;
+    height: 52vh;
+    max-height: 480px;
     background-size: cover;
     background-position: center top;
   }
 
   .hero-spacer-uncovered {
-    min-height: 320px;
+    min-height: 280px;
   }
 
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    gap: 0.85rem;
   }
 
   .hero-actions .btn {
     width: 100%;
+    padding: 0.95rem 1.5rem;
+    font-size: 1rem;
   }
 
   .hero-stats {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .craft-card {
+    padding: 1.75rem 1rem;
+    border-radius: 1.5rem;
   }
 
   .craft-stage-wrap {
-    height: 320px;
+    height: 280px;
+  }
+
+  .craft-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .craft-controls .btn {
+    width: 100%;
+  }
+
+  /* Zapobieganie zoomowaniu iOS przy kliknięciu w formularz */
+  .form-control {
+    font-size: 16px;
+  }
+
+  /* Obsługa Lightboxa na telefonie */
+  .lightbox-header {
+    padding: 1rem;
+  }
+
+  .lightbox-title-box h3 {
+    font-size: 1.05rem;
+  }
+
+  .lightbox-stage {
+    padding: 0.5rem;
+  }
+
+  .lightbox-main-img {
+    max-width: 95%;
+    max-height: 65vh;
   }
 
   .lightbox-nav-btn {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
   .lightbox-nav-prev { left: 0.5rem; }
   .lightbox-nav-next { right: 0.5rem; }
 }
 
 @media (max-width: 480px) {
+  .section-title {
+    font-size: 1.85rem;
+  }
+
   .hero-backdrop-stage {
-    min-height: 42vh;
+    height: 44vh;
+    min-height: 260px;
   }
 
   .hero-spacer-uncovered {
-    min-height: 240px;
+    min-height: 220px;
+  }
+
+  .hero-lead-text {
+    font-size: 1.05rem;
   }
 }
