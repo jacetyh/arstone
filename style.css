@@ -161,9 +161,11 @@ section {
 }
 
 .nav-logo-img {
-  height: 44px;
+  height: 52px;
+  max-width: 220px;
   width: auto;
   object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
 }
 
 .nav-menu {
@@ -346,7 +348,33 @@ section {
   justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+}
+
+.hero-banner-card {
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto 3.5rem;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border-accent);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.65), 0 0 40px -10px var(--glow-blue);
+  background: var(--bg-card);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-banner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.75), 0 0 50px -5px var(--glow-blue);
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 520px;
 }
 
 .hero-stats {

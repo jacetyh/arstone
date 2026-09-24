@@ -1,31 +1,62 @@
-# ARstone — Strona Kamieniarska & Portfolio Inwestycji
+# AR STONE — Wykończenia Wnętrz | Remonty | Kamień Dekoracyjny
 
-Nowoczesna strona internetowa dla pracowni kamieniarskiej **ARstone** zoptymalizowana pod publikację w **GitHub Pages**.
+Nowoczesna strona internetowa dla firmy **AR STONE** zoptymalizowana pod publikację w **GitHub Pages**.
 
-Strona zawiera:
-- **Interaktywną animację HTML5**: stukanie młotkiem kamieniarskim w surową skałę z deszczem iskier i płynną transformacją w luksusowy, polerowany blat marmurowy z żyłkami Calacatta.
+Strona łączy:
+- **Oficjalny branding AR STONE** z sygnetem cyrkla kreślarskiego, narzędzi i górskiego krajobrazu.
+- **Wizytówkę pracowni i rzemiosła** w sekcji Hero z pełnym wyposażeniem warsztatu kamieniarskiego i remontowego.
+- **Interaktywną animację HTML5**: stukanie młotkiem kamieniarskim w surową skałę z deszczem iskier na `<canvas>` i płynną transformacją w luksusowy blat marmurowy.
 - **Dynamiczne portfolio realizacji**: podzielone na katalogi inwestycji ze zdjęciami.
 - **Inteligentne sortowanie zdjęć**:
   - Zdjęcia ponumerowane (np. `1.jpg`, `2.png`, `3.webp`) są wyświetlane **w stałej kolejności rosnącej**.
   - Zdjęcia nienumerowane (np. `detal.jpg`, `front.png`) są wyświetlane **losowo** przy każdym otwarciu albumu.
-- **Pełnoekranowy Lightbox**: przeglądanie galerii inwestycji z obsługą klawiatury (strzałki, Esc) oraz miniaturkami.
-- **Zakładki tematyczne**: *O nas*, *Obróbka Kamienia*, *Realizacje*, *Materiały & Oferta*, *Kontakt & Wycena*.
-- **Motyw Ciemny / Jasny** z zapamiętywaniem preferencji.
+- **Prosty system edycji treści**: centralny plik `content.json` pozwalający na łatwą zmianę tekstów, telefonów i adresów.
+
+---
+
+## ✏️ Jak w łatwy sposób zmieniać treści na stronie
+
+Nie musisz edytować kodu HTML ani znać programowania! Wszystkie kluczowe teksty i dane kontaktowe znajdują się w jednym, przejrzystym pliku:
+
+### 👉 **`content.json`**
+
+Możesz go otworzyć w dowolnym edytorze tekstu (lub bezpośrednio na GitHubie klikając ikonę ołówka `Edit this file`):
+
+```json
+{
+  "brand": {
+    "name": "AR STONE",
+    "tagline": "WYKOŃCZENIA WNĘTRZ | REMONTY | KAMIEŃ DEKORACYJNY",
+    "badge": "Kompleksowe Wykończenia Wnętrz & Kamieniarstwo"
+  },
+  "hero": {
+    "title_main": "Mistrzowskie Wykończenia Wnętrz &",
+    "title_highlight": "Kamień Dekoracyjny",
+    "description": "Tutaj wpisz swój opis firmy..."
+  },
+  "contact": {
+    "phone": "+48 500 123 456",
+    "email": "kontakt@arstone.pl",
+    "address": "ul. Twoja Ulica 12, Twoje Miasto",
+    "hours": "Poniedziałek – Piątek: 8:00 – 18:00",
+    "response_time": "Odpowiadamy zwykle w ciągu 24 godzin"
+  }
+}
+```
+Zapisz plik, zrób commit/push i strona automatycznie zaktualizuje się o nowe dane!
 
 ---
 
 ## 📸 Jak dodawać nowe zdjęcia z wykonanych inwestycji
-
-Dodawanie nowych projektów jest w 100% bezobsługowe:
 
 1. **Utwórz nowy folder w katalogu `projects/`**, np.:
    ```
    projects/05-rezydencja-sopot-schody-marmur/
    ```
 2. **Wrzuć zdjęcia do tego folderu**:
-   - **Jeśli chcesz określić kolejność zdjęć:** nazwij je liczbami: `1.jpg`, `2.jpg`, `3.png` itp. (z dowolnym rozszerzeniem `.jpg`, `.jpeg`, `.png`, `.webp`, `.svg`).
-   - **Jeśli nie ponumerujesz zdjęć:** strona automatycznie wymiesza je i wyświetli w **losowej kolejności**.
-3. *(Opcjonalnie)* Jeśli chcesz dodać własny opis lub zmienić kategorię, stwórz w tym folderze plik `info.json`:
+   - **Kolejność numeryczna:** nazwij zdjęcia liczbami: `1.jpg`, `2.jpg`, `3.png` itp.
+   - **Kolejność losowa:** nazwij zdjęcia dowolnie: `detal.jpg`, `kuchnia.png` — strona wymiesza je losowo.
+3. *(Opcjonalnie)* Dodaj w folderze plik `info.json` z tytułem i kategorią inwestycji:
    ```json
    {
      "title": "Schody Pałacowe — Marmur Carrara",
@@ -34,19 +65,14 @@ Dodawanie nowych projektów jest w 100% bezobsługowe:
      "location": "Sopot, Polska"
    }
    ```
-   *Jeśli nie dodasz pliku `info.json`, strona sama wygeneruje czytelny tytuł z nazwy folderu.*
-
-4. **Wyślij zmiany do repozytorium (git push):**
-   GitHub Actions automatycznie przeskanuje nowy katalog, zindeksuje zdjęcia i opublikuje zaktualizowaną stronę na GitHub Pages!
+4. **Wyślij zmiany (git push):** GitHub Actions automatycznie zindeksuje nowy folder i opublikuje go w galerii!
 
 ---
 
 ## 💻 Podgląd lokalny
 
-Możesz uruchomić stronę lokalnie w terminalu:
-
 ```bash
-# Skanowanie i generowanie indeksu projektów
+# Wygenerowanie indeksu projektów ze zdjęć
 python3 generate_projects.py
 
 # Uruchomienie lokalnego serwera
@@ -60,20 +86,15 @@ Otwórz w przeglądarce: [http://localhost:8080](http://localhost:8080)
 
 ```
 arstone/
-├── .github/workflows/
-│   └── deploy.yml            # Automatyczne budowanie indeksu i wdrożenie na Pages
 ├── assets/
-│   ├── favicon.svg           # Favikona sygnetu ARstone
-│   └── logo.svg              # Wektorowe logo ARstone
-├── projects/                 # KATALOGI Z WYKONANYMI INWESTYCJAMI
-│   ├── 01-kuchnia-marmur-calacatta/           (zdjęcia 1.svg, 2.svg, 3.svg - kolejność 1,2,3)
-│   ├── 02-lazienka-granit-nero-marquina/      (zdjęcia 1.svg, 2.svg - kolejność 1,2)
-│   ├── 03-wyspa-kuchenna-kwarcyt-taj-mahal/   (zdjęcia nienumerowane - losowe)
-│   └── 04-schody-lewitujace-granit-star-galaxy/
-├── app.js                    # Silnik JS: animacja HTML5, cząsteczki, sortowanie, lightbox
-├── generate_projects.py      # Automatyczny generator indeksu projektów (projects.json)
-├── index.html                # Główny szablon HTML5 z sekcjami i sceną animacji
-├── projects.json             # Wygenerowany rejestr inwestycji
-├── style.css                 # Style CSS, motywy dark/light, responsywność
-└── .nojekyll                 # Wyłączenie Jekylla na GitHub Pages
+│   ├── logo-official.png     # Oficjalne logo AR STONE (z ARstonelogo1.png)
+│   ├── workshop-hero.png     # Baner pracowni w Hero (z arstoneLogo2.png)
+│   └── favicon.svg           # Favikona
+├── content.json              # Centralny plik konfiguracji treści (teksty, telefony, adresy)
+├── projects/                 # Katalogi inwestycji ze zdjęciami
+├── app.js                    # Silnik JS: wczytywanie treści, animacja młotka, lightbox
+├── index.html                # Główny szablon strony
+├── style.css                 # Style strony i responsywność
+├── generate_projects.py      # Automatyczny generator indeksu zdjęć
+└── .github/workflows/deploy.yml
 ```

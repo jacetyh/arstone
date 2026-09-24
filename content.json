@@ -1,0 +1,38 @@
+{
+  "brand": {
+    "name": "AR STONE",
+    "tagline": "WYKOŃCZENIA WNĘTRZ | REMONTY | KAMIEŃ DEKORACYJNY",
+    "badge": "Kompleksowe Wykończenia Wnętrz & Kamieniarstwo"
+  },
+  "hero": {
+    "title_main": "Mistrzowskie Wykończenia Wnętrz &",
+    "title_highlight": "Kamień Dekoracyjny",
+    "description": "Łączymy precyzyjne remonty, sztukę wykończeń pod klucz oraz szlachetny kamień dekoracyjny i spieki kwarcowe. Od projektu i wizji, przez stan surowy, po perfekcyjne detale.",
+    "stats": [
+      {
+        "number": "15+",
+        "label": "Lat pasji i doświadczenia"
+      },
+      {
+        "number": "450+",
+        "label": "Zrealizowanych inwestycji"
+      },
+      {
+        "number": "100%",
+        "label": "Precyzji i gwarancji jakości"
+      }
+    ]
+  },
+  "contact": {
+    "phone": "+48 500 123 456",
+    "email": "kontakt@arstone.pl",
+    "address": "ul. Kamieniarska 12, Warszawa",
+    "hours": "Poniedziałek – Piątek: 8:00 – 18:00",
+    "response_time": "Odpowiadamy zwykle w ciągu 24 godzin"
+  },
+  "craft_section": {
+    "tag": "Sztuka Rzemiosła HTML5",
+    "title": "Od Surowej Skały do Luksusowej Powierzchni",
+    "subtitle": "Kliknij w młotek lub uruchom animację, aby zobaczyć, jak tradycyjne rzemiosło i precyzja uwalniają szlachetny blat ukryty w kamieniu."
+  }
+}
