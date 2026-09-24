@@ -3,148 +3,533 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARstone — Oficjalne Logo</title>
+  <title>ARstone — Naturalny Kamień &amp; Realizacje Kamieniarskie</title>
   
-  <!-- SEO & Social Media Meta Tags -->
-  <meta name="description" content="Oficjalna prezentacja logo ARstone przygotowana dla GitHub Pages.">
-  <meta property="og:title" content="ARstone — Logo">
-  <meta property="og:description" content="Nowoczesna strona prezentacyjna marki ARstone.">
+  <meta name="description" content="Ekskluzywne blaty kuchenne, łazienki, schody i posadzki z marmuru, granitu i spieków kwarcowych. Zobacz nasze realizacje ARstone.">
+  <meta property="og:title" content="ARstone — Naturalny Kamień w Mistrzowskim Wydaniu">
+  <meta property="og:description" content="Portfolio zrealizowanych inwestycji kamieniarskich. Odkryj magię obróbki kamienia.">
   <meta property="og:image" content="./assets/logo.svg">
   <meta property="og:type" content="website">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
 
   <!-- Google Fonts: Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Style CSS -->
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <!-- Tło dekoracyjne -->
-  <div class="bg-decor" aria-hidden="true"></div>
+  <!-- Tło siatkowe -->
+  <div class="site-bg-pattern" aria-hidden="true"></div>
 
-  <div class="container">
-    <!-- Górny pasek -->
-    <header>
-      <div class="brand-badge">
-        <span style="display:inline-block; width:8px; height:8px; background:#38bdf8; border-radius:50%; box-shadow:0 0 8px #38bdf8;"></span>
-        GitHub Pages
+  <!-- Górny pasek nawigacyjny -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="nav-brand" aria-label="ARstone Strona Główna">
+        <img src="./assets/logo.svg" alt="ARstone Logo" class="nav-logo-img">
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link">O nas</a></li>
+          <li><a href="#craft" class="nav-link">Obróbka Kamienia</a></li>
+          <li><a href="#projects" class="nav-link">Realizacje</a></li>
+          <li><a href="#materials" class="nav-link">Materiały</a></li>
+          <li><a href="#contact" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Przełącz motyw dzień/noc" title="Przełącz motyw">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <a href="#contact" class="btn btn-primary" style="padding: 0.55rem 1.15rem; font-size: 0.875rem;">
+          Wycena
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu mobilne">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Zmień motyw">
-        <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <span id="themeText">Motyw</span>
-      </button>
-    </header>
+    </div>
+  </header>
 
-    <!-- Główna część prezentacyjna -->
-    <main>
-      <section class="logo-card">
-        <!-- 
-          WSKAZÓWKA: Aby podmienić logo na własny plik graficzny (np. PNG, WebP lub inny SVG):
-          Wystarczy skopiować swój plik do katalogu assets/ (np. assets/moje-logo.png)
-          i zmienić poniższą ścieżkę w atrybucie src.
-        -->
-        <div class="logo-display">
-          <img src="./assets/logo.svg" alt="ARstone Logo" class="logo-image" id="arstoneLogo">
+  <!-- Sekcja Hero -->
+  <section class="hero-section" id="about">
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span style="display:inline-block; width:8px; height:8px; background:var(--accent-blue); border-radius:50%; box-shadow:0 0 8px var(--accent-blue);"></span>
+        Pracownia Kamieniarska ARstone
+      </div>
+      <h1 class="hero-title">
+        Naturalny Kamień w <br>
+        <span class="hero-title-highlight">Mistrzowskim Wydaniu</span>
+      </h1>
+      <p class="hero-desc">
+        Tworzymy unikalne blaty kuchenne, wyspy monolityczne, luksusowe łazienki oraz schody. Łączymy tradycyjny kunszt ciosania kamienia z precyzyjną technologią obróbki CNC i cięcia wodnego.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Przeglądaj Realizacje
+        </a>
+        <a href="#craft" class="btn btn-secondary">
+          <span>🔨</span> Zobacz Magię Obróbki
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Lat pasji i doświadczenia</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">450+</span>
+          <span class="stat-label">Zrealizowanych projektów</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">0.1 mm</span>
+          <span class="stat-label">Dokładność obróbki CNC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCYJNA ANIMACJA HTML5: Transformacja Młotkiem w Blat -->
+  <section class="craft-section" id="craft">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interaktywny Kunszt HTML5</span>
+        <h2 class="section-title">Od Surowego Głazu do Luksusowego Blatu</h2>
+        <p class="section-subtitle">
+          Każdy zachwycający blat z marmuru czy granitu zaczyna się od surowej bryły. Kliknij w młotek lub uruchom animację, aby zobaczyć proces przemiany skały w perfekcyjną powierzchnię.
+        </p>
+      </div>
+
+      <div class="craft-card">
+        <div class="craft-stage-wrap">
+          <!-- Canvas z deszczem iskier i odprysków -->
+          <canvas id="particlesCanvas"></canvas>
+
+          <!-- Interaktywna scena wektorowa SVG -->
+          <svg class="craft-svg-stage" viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Surowa skała -->
+              <radialGradient id="rockTexture" cx="40%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#475569" />
+                <stop offset="60%" stop-color="#334155" />
+                <stop offset="100%" stop-color="#1e293b" />
+              </radialGradient>
+
+              <!-- Marmurowy blat wypolerowany -->
+              <linearGradient id="marbleSurface" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f8fafc" />
+                <stop offset="40%" stop-color="#f1f5f9" />
+                <stop offset="100%" stop-color="#e2e8f0" />
+              </linearGradient>
+
+              <linearGradient id="marbleFront" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#e2e8f0" />
+                <stop offset="100%" stop-color="#cbd5e1" />
+              </linearGradient>
+
+              <linearGradient id="goldVein" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#d97706" stop-opacity="0.6" />
+              </linearGradient>
+
+              <!-- Promień błysku poleru -->
+              <linearGradient id="gleamGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+                <stop offset="50%" stop-color="#ffffff" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+              </linearGradient>
+
+              <!-- Stalowy obuch młotka -->
+              <linearGradient id="hammerSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#94a3b8" />
+                <stop offset="50%" stop-color="#475569" />
+                <stop offset="100%" stop-color="#1e293b" />
+              </linearGradient>
+            </defs>
+
+            <!-- Cień pod kamieniem -->
+            <ellipse cx="360" cy="305" rx="240" ry="25" fill="rgba(0,0,0,0.4)" filter="blur(8px)" />
+
+            <!-- 1. Surowy, nieoszlifowany głaz skalny -->
+            <g class="raw-rock" id="craftRock">
+              <!-- Zarys surowego głazu z pęknięciami -->
+              <polygon points="180,290 140,220 180,140 280,105 440,110 540,160 580,240 520,300 350,310" 
+                       fill="url(#rockTexture)" stroke="#64748b" stroke-width="3" />
+              
+              <!-- Fasety i pęknięcia skały -->
+              <polygon points="180,140 280,105 320,180 230,210" fill="#334155" opacity="0.8" />
+              <polygon points="280,105 440,110 390,195 320,180" fill="#475569" opacity="0.6" />
+              <polygon points="440,110 540,160 480,220 390,195" fill="#1e293b" opacity="0.9" />
+              <polygon points="140,220 230,210 260,285 180,290" fill="#1e293b" opacity="0.75" />
+              <polygon points="230,210 390,195 360,295 260,285" fill="#334155" opacity="0.5" />
+              <polygon points="390,195 480,220 520,300 360,295" fill="#475569" opacity="0.8" />
+
+              <!-- Widoczne rysy po dłucie -->
+              <line x1="280" y1="150" x2="310" y2="230" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,4" />
+              <line x1="410" y1="130" x2="430" y2="210" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4,6" />
+            </g>
+
+            <!-- 2. Wypolerowany, luksusowy blat kamienny (wyłania się) -->
+            <g class="polished-slab" id="craftSlab" style="opacity: 0;">
+              <!-- Górna płyta blatu w perspektywie -->
+              <polygon points="120,220 540,220 620,150 200,150" fill="url(#marbleSurface)" stroke="#0284c7" stroke-width="1.5" />
+              
+              <!-- Frontowa faza blatu -->
+              <polygon points="120,220 540,220 540,265 120,265" fill="url(#marbleFront)" stroke="#94a3b8" stroke-width="1" />
+              
+              <!-- Boczna krawędź blatu -->
+              <polygon points="540,220 620,150 620,195 540,265" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1" />
+
+              <!-- Luksusowe żyłki marmuru Calacatta -->
+              <path d="M180,180 Q320,165 420,200 T580,170" fill="none" stroke="url(#goldVein)" stroke-width="3" stroke-linecap="round" />
+              <path d="M260,195 Q380,185 490,215" fill="none" stroke="url(#goldVein)" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M240,220 L240,265" fill="none" stroke="url(#goldVein)" stroke-width="2" />
+              <path d="M430,220 L445,265" fill="none" stroke="url(#goldVein)" stroke-width="2" />
+
+              <!-- Krawędź fazowana z odbłyskiem -->
+              <line x1="120" y1="220" x2="540" y2="220" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" opacity="0.9" />
+              <line x1="540" y1="220" x2="620" y2="150" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+
+              <!-- Ruchomy promyk lśnienia (efekt wypolerowania na błysk) -->
+              <rect class="slab-shine" x="120" y="150" width="100" height="115" fill="url(#gleamGlow)" 
+                    transform="skewX(-45)" pointer-events="none" />
+            </g>
+
+            <!-- 3. Narzędzie: Kamieniarski Młotek & Dłuto -->
+            <g class="hammer-element" id="craftHammer">
+              <!-- Trzonek młotka (drewno jesionowe) -->
+              <rect x="200" y="20" width="16" height="150" rx="6" fill="#b45309" stroke="#78350f" stroke-width="1.5" 
+                    transform="rotate(-25 208 95)" />
+              <rect x="202" y="110" width="12" height="40" rx="3" fill="#92400e" transform="rotate(-25 208 95)" />
+
+              <!-- Ciężki stalowy obuch kamieniarski -->
+              <g transform="translate(195, 30) rotate(-25 0 0)">
+                <rect x="-35" y="-15" width="70" height="30" rx="4" fill="url(#hammerSteel)" stroke="#0f172a" stroke-width="2" />
+                <!-- Skosy obucha -->
+                <polygon points="-35,-15 -25,-20 25,-20 35,-15" fill="#64748b" />
+                <polygon points="-35,15 -25,20 25,20 35,15" fill="#334155" />
+                <!-- Centralne mocowanie klina -->
+                <circle cx="0" cy="0" r="4" fill="#38bdf8" />
+              </g>
+
+              <!-- Dłuto kamieniarskie przyłożone do skały -->
+              <g transform="translate(320, 185) rotate(20)">
+                <polygon points="-5,-40 5,-40 6,10 0,25 -6,10" fill="#94a3b8" stroke="#334155" stroke-width="1.5" />
+                <polygon points="-5,-40 5,-40 4,-35 -4,-35" fill="#f8fafc" />
+              </g>
+            </g>
+          </svg>
         </div>
 
-        <p class="logo-description">
-          Nowoczesna identyfikacja wizualna marki ARstone łącząca precyzję architektury z naturalnym pięknem kamienia.
-        </p>
+        <!-- Pasek postępu obróbki -->
+        <div class="craft-progress-wrap">
+          <div class="craft-progress-labels">
+            <span>Postęp obróbki kamienia:</span>
+            <span id="craftProgressPercent">0%</span>
+          </div>
+          <div class="craft-progress-bar">
+            <div class="craft-progress-fill" id="craftProgressFill"></div>
+          </div>
+          <p class="craft-status-desc" id="craftStatusDesc">
+            Etap 1: Wyselekcjonowany, surowy blok skalny z kamieniołomu
+          </p>
+        </div>
 
-        <!-- Akcje pobierania i podglądu -->
-        <div class="actions">
-          <a href="./assets/logo.svg" download="ARstone-Logo.svg" class="btn btn-primary">
+        <!-- Przyciski akcji animacji -->
+        <div class="craft-controls">
+          <button type="button" class="btn btn-gold" id="strikeHammerBtn">
+            <span>🔨</span> Stuknij młotkiem!
+          </button>
+          <button type="button" class="btn btn-secondary" id="autoTransformBtn">
+            Automatyczna transformacja ⚡
+          </button>
+          <button type="button" class="btn btn-secondary" id="soundToggleBtn">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
             </svg>
-            Pobierz SVG
-          </a>
-          <button type="button" class="btn btn-secondary" id="downloadPngBtn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            Eksportuj PNG
+            Dźwięk: WYŁ
           </button>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+  </section>
 
-    <!-- Stopka -->
-    <footer>
-      <p>&copy; <span id="year"></span> <strong>ARstone</strong> &bull; Hostowane na <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
-    </footer>
+  <!-- SEKCJA REALIZACJI (Portfolio z katalogami inwestycji) -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nasze Portfolio</span>
+        <h2 class="section-title">Zrealizowane Inwestycje</h2>
+        <p class="section-subtitle">
+          Każdy projekt to osobny folder z albumem fotografii. Kliknij w wybraną inwestycję, aby otworzyć galerię w pełnej rozdzielczości.
+        </p>
+      </div>
+
+      <!-- Filtry kategorii -->
+      <div class="projects-filter-bar">
+        <button class="filter-btn active" data-category="all">Wszystkie realizacje</button>
+        <button class="filter-btn" data-category="Kuchnie &amp; Blaty">Kuchnie &amp; Blaty</button>
+        <button class="filter-btn" data-category="Łazienki">Łazienki</button>
+        <button class="filter-btn" data-category="Schody &amp; Posadzki">Schody &amp; Posadzki</button>
+      </div>
+
+      <!-- Siatka projektów generowana z katalogów / projects.json -->
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Renderowane przez app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCJA MATERIAŁY I OFERTA -->
+  <section class="materials-section" id="materials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Materiały Najwyższej Klasy</span>
+        <h2 class="section-title">Kamień, Który Przetrwa Pokolenia</h2>
+        <p class="section-subtitle">
+          Sprowadzamy wyselekcjonowane slaby bezpośrednio z kamieniołomów we Włoszech, Hiszpanii i Brazylii.
+        </p>
+      </div>
+
+      <div class="materials-grid">
+        <div class="material-card">
+          <div class="material-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="material-title">Granity Naturalne</h3>
+          <p class="material-desc">
+            Bezkompromisowa odporność na zarysowania, gorące naczynia i kwasy spożywcze. Idealny wybór na intensywnie użytkowane blaty robocze i schody zewnętrzne.
+          </p>
+        </div>
+
+        <div class="material-card">
+          <div class="material-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m4.93 4.93 4.24 4.24"></path>
+              <path d="m14.83 9.17 4.24-4.24"></path>
+              <path d="m14.83 14.83 4.24 4.24"></path>
+              <path d="m9.17 14.83-4.24 4.24"></path>
+            </svg>
+          </div>
+          <h3 class="material-title">Marmury Szlachetne</h3>
+          <p class="material-desc">
+            Synonim prestiżu i ponadczasowej elegancji. Dostępne w polerze, macie (honed) lub satynie. Dedykowane do łazienek, kominków i ściennych paneli dekoracyjnych.
+          </p>
+        </div>
+
+        <div class="material-card">
+          <div class="material-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            </svg>
+          </div>
+          <h3 class="material-title">Kwarcyty &amp; Spieki</h3>
+          <p class="material-desc">
+            Wielkoformatowe spieki kwarcowe (Laminam, Dekton, Neolith) oraz kwarcyty twarde jak granit, a subtelne jak marmur. Zerowa nasiąkliwość i odporność na plamy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCJA KONTAKT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Skontaktuj się z Nami</span>
+        <h2 class="section-title">Zaplanujmy Twoją Inwestycję</h2>
+        <p class="section-subtitle">
+          Prześlij wymiary, projekt lub szkic — przygotujemy bezpłatną wycenę wraz z doradztwem w doborze kamienia.
+        </p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-info-side">
+          <div class="contact-detail-item">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4>Telefon kontaktowy</h4>
+              <p><a href="tel:+48500123456">+48 500 123 456</a></p>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Poniedziałek – Piątek: 8:00 – 18:00</p>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </div>
+            <div>
+              <h4>E-mail do wycen</h4>
+              <p><a href="mailto:kontakt@arstone.pl">kontakt@arstone.pl</a></p>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Odpowiadamy zwykle do 24 godzin</p>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <h4>Pracownia &amp; Showroom</h4>
+              <p>ul. Kamieniarska 12, Warszawa</p>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Zapraszamy na prezentację próbek kamienia</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="clientName">Imię i nazwisko</label>
+            <input type="text" id="clientName" class="form-control" placeholder="np. Jan Kowalski" required>
+          </div>
+          <div class="form-group">
+            <label for="clientEmail">Adres e-mail / Telefon</label>
+            <input type="text" id="clientEmail" class="form-control" placeholder="np. jan@example.com lub 500 123 456" required>
+          </div>
+          <div class="form-group">
+            <label for="projectType">Rodzaj realizacji</label>
+            <select id="projectType" class="form-control">
+              <option value="blat-kuchenny">Blat kuchenny / Wyspa</option>
+              <option value="lazienka">Łazienka / Blat umywalkowy</option>
+              <option value="schody">Schody / Parapety</option>
+              <option value="kominek">Kominek / Płyty ścienne</option>
+              <option value="inne">Inny projekt indywidualny</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="clientMessage">Opis zapytania (przybliżone wymiary, preferowany kamień)</label>
+            <textarea id="clientMessage" class="form-control" placeholder="Opisz swoje oczekiwania, wymiary blatu, wycięcia na zlew podwieszany lub płytę..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+            Wyślij zapytanie o wycenę &rarr;
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pełnoekranowy Lightbox / Galeria inwestycji -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Galeria zdjęć inwestycji">
+    <div class="lightbox-header">
+      <div class="lightbox-title-box">
+        <h3 id="lightboxTitle">Tytuł Projektu</h3>
+        <p id="lightboxDesc">Kategoria &bull; Opis</p>
+      </div>
+      <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Zamknij galerię" title="Zamknij (Esc)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="lightbox-stage">
+      <button class="lightbox-nav-btn lightbox-nav-prev" id="lightboxPrevBtn" aria-label="Poprzednie zdjęcie" title="Poprzednie (&larr;)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <img src="" alt="Zdjęcie realizacji ARstone" class="lightbox-main-img" id="lightboxMainImg">
+
+      <button class="lightbox-nav-btn lightbox-nav-next" id="lightboxNextBtn" aria-label="Następne zdjęcie" title="Następne (&rarr;)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <div class="lightbox-footer">
+      <div class="lightbox-order-indicator" id="lightboxOrderIndicator">
+        <!-- Wskaźnik kolejności numerycznej lub losowej -->
+      </div>
+      <div class="lightbox-thumbnails" id="lightboxThumbs">
+        <!-- Miniatury zdjęć -->
+      </div>
+    </div>
   </div>
 
-  <!-- Skrypt pomocniczy: Dark/Light Mode + Eksport PNG -->
-  <script>
-    // Aktualny rok w stopce
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Stopka -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="./assets/logo.svg" alt="ARstone" style="height: 38px; width: auto;">
+          <p>
+            Pracownia kamieniarska specjalizująca się w precyzyjnej obróbce granitu, marmuru, kwarcytów i spieków kwarcowych na terenie całego kraju.
+          </p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Nawigacja</h4>
+          <ul>
+            <li><a href="#about">O nas</a></li>
+            <li><a href="#craft">Obróbka kamienia</a></li>
+            <li><a href="#projects">Realizacje inwestycji</a></li>
+            <li><a href="#materials">Oferta i materiały</a></li>
+            <li><a href="#contact">Kontakt i wycena</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+48500123456">+48 500 123 456</a></li>
+            <li><a href="mailto:kontakt@arstone.pl">kontakt@arstone.pl</a></li>
+            <li>Warszawa, Polska</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> <strong>ARstone</strong>. Wszelkie prawa zastrzeżone.</p>
+        <p>Hostowane na <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-blue);">GitHub Pages</a></p>
+      </div>
+    </div>
+  </footer>
 
-    // Obsługa motywu Dark / Light
-    const toggleBtn = document.getElementById('themeToggle');
-    const themeText = document.getElementById('themeText');
-    const root = document.documentElement;
-
-    const savedTheme = localStorage.getItem('arstone-theme') || 'dark';
-    setTheme(savedTheme);
-
-    toggleBtn.addEventListener('click', () => {
-      const currentTheme = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      setTheme(newTheme);
-      localStorage.setItem('arstone-theme', newTheme);
-    });
-
-    function setTheme(theme) {
-      if (theme === 'light') {
-        root.setAttribute('data-theme', 'light');
-        themeText.textContent = 'Ciemny';
-      } else {
-        root.removeAttribute('data-theme');
-        themeText.textContent = 'Jasny';
-      }
-    }
-
-    // Eksport SVG do PNG wysokiej rozdzielczości
-    document.getElementById('downloadPngBtn').addEventListener('click', () => {
-      const img = document.getElementById('arstoneLogo');
-      const canvas = document.createElement('canvas');
-      const scale = 3; // Wysoka jakość Retina/3x
-      canvas.width = 620 * scale;
-      canvas.height = 140 * scale;
-      const ctx = canvas.getContext('2d');
-      
-      const tempImg = new Image();
-      tempImg.crossOrigin = 'anonymous';
-      tempImg.onload = () => {
-        ctx.scale(scale, scale);
-        ctx.drawImage(tempImg, 0, 0, 620, 140);
-        const a = document.createElement('a');
-        a.download = 'ARstone-Logo.png';
-        a.href = canvas.toDataURL('image/png');
-        a.click();
-      };
-      tempImg.src = img.src;
-    });
-  </script>
+  <!-- Skrypt JS aplikacji -->
+  <script src="./app.js"></script>
 </body>
 </html>
