@@ -1,50 +1,58 @@
-# ARstone — Prezentacja Logo & Strona GitHub Pages
+# ARstone — Strona Kamieniarska & Portfolio Inwestycji
 
-Nowoczesna, lekka i w pełni responsywna strona internetowa prezentująca logo marki **ARstone**, zaprojektowana i zoptymalizowana pod publikację w **GitHub Pages**.
+Nowoczesna strona internetowa dla pracowni kamieniarskiej **ARstone** zoptymalizowana pod publikację w **GitHub Pages**.
 
-Adres strony po wdrożeniu: **[https://jacetyh.github.io/arstone/](https://jacetyh.github.io/arstone/)**
-
----
-
-## 🚀 Jak uruchomić GitHub Pages
-
-Strona jest gotowa do natychmiastowego hostowania w GitHub Pages. Możesz użyć jednej z dwóch metod:
-
-### Metoda 1: Domyślny mechanizm (GitHub Actions - zalecany)
-W repozytorium przygotowany jest workflow `.github/workflows/deploy.yml`:
-1. Przejdź na GitHubie do swojego repozytorium: `Settings` → `Pages`.
-2. W sekcji **Build and deployment** > **Source** wybierz: **GitHub Actions**.
-3. Po scaleniu (merge) do gałęzi `main`, strona zostanie automatycznie opublikowana pod adresem:
-   `https://jacetyh.github.io/arstone/`
-
-### Metoda 2: Klasyczny deployment z gałęzi
-1. Przejdź do `Settings` → `Pages`.
-2. W sekcji **Build and deployment** > **Source** wybierz: **Deploy from a branch**.
-3. Wybierz gałąź `main` oraz folder `/ (root)` i kliknij **Save**.
+Strona zawiera:
+- **Interaktywną animację HTML5**: stukanie młotkiem kamieniarskim w surową skałę z deszczem iskier i płynną transformacją w luksusowy, polerowany blat marmurowy z żyłkami Calacatta.
+- **Dynamiczne portfolio realizacji**: podzielone na katalogi inwestycji ze zdjęciami.
+- **Inteligentne sortowanie zdjęć**:
+  - Zdjęcia ponumerowane (np. `1.jpg`, `2.png`, `3.webp`) są wyświetlane **w stałej kolejności rosnącej**.
+  - Zdjęcia nienumerowane (np. `detal.jpg`, `front.png`) są wyświetlane **losowo** przy każdym otwarciu albumu.
+- **Pełnoekranowy Lightbox**: przeglądanie galerii inwestycji z obsługą klawiatury (strzałki, Esc) oraz miniaturkami.
+- **Zakładki tematyczne**: *O nas*, *Obróbka Kamienia*, *Realizacje*, *Materiały & Oferta*, *Kontakt & Wycena*.
+- **Motyw Ciemny / Jasny** z zapamiętywaniem preferencji.
 
 ---
 
-## 🎨 Jak podmienić logo na własny plik graficzny
+## 📸 Jak dodawać nowe zdjęcia z wykonanych inwestycji
 
-Jeśli posiadasz własny plik z gotowym logo (np. `logo.png`, `logo.svg` lub `logo.webp`):
-1. Skopiuj swój plik do katalogu `assets/` (np. `assets/moje-logo.png`).
-2. W pliku `index.html` zaktualizuj ścieżkę w sekcji `.logo-display`:
-   ```html
-   <img src="./assets/moje-logo.png" alt="ARstone Logo" class="logo-image" id="arstoneLogo">
+Dodawanie nowych projektów jest w 100% bezobsługowe:
+
+1. **Utwórz nowy folder w katalogu `projects/`**, np.:
    ```
-3. Opcjonalnie zaktualizuj favikonę w `<link rel="icon" ...>` w sekcji `<head>`.
+   projects/05-rezydencja-sopot-schody-marmur/
+   ```
+2. **Wrzuć zdjęcia do tego folderu**:
+   - **Jeśli chcesz określić kolejność zdjęć:** nazwij je liczbami: `1.jpg`, `2.jpg`, `3.png` itp. (z dowolnym rozszerzeniem `.jpg`, `.jpeg`, `.png`, `.webp`, `.svg`).
+   - **Jeśli nie ponumerujesz zdjęć:** strona automatycznie wymiesza je i wyświetli w **losowej kolejności**.
+3. *(Opcjonalnie)* Jeśli chcesz dodać własny opis lub zmienić kategorię, stwórz w tym folderze plik `info.json`:
+   ```json
+   {
+     "title": "Schody Pałacowe — Marmur Carrara",
+     "category": "Schody & Posadzki",
+     "description": "Klasyczne schody zabiegowe z profilowanym noskiem i podświetleniem.",
+     "location": "Sopot, Polska"
+   }
+   ```
+   *Jeśli nie dodasz pliku `info.json`, strona sama wygeneruje czytelny tytuł z nazwy folderu.*
+
+4. **Wyślij zmiany do repozytorium (git push):**
+   GitHub Actions automatycznie przeskanuje nowy katalog, zindeksuje zdjęcia i opublikuje zaktualizowaną stronę na GitHub Pages!
 
 ---
 
 ## 💻 Podgląd lokalny
 
-Możesz uruchomić prosty serwer HTTP na swoim komputerze:
+Możesz uruchomić stronę lokalnie w terminalu:
 
 ```bash
-# Uruchomienie prostego serwera Python
+# Skanowanie i generowanie indeksu projektów
+python3 generate_projects.py
+
+# Uruchomienie lokalnego serwera
 python3 -m http.server 8080
 ```
-Następnie otwórz w przeglądarce: [http://localhost:8080](http://localhost:8080)
+Otwórz w przeglądarce: [http://localhost:8080](http://localhost:8080)
 
 ---
 
@@ -52,14 +60,20 @@ Następnie otwórz w przeglądarce: [http://localhost:8080](http://localhost:808
 
 ```
 arstone/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      # Automatyczny deployment GitHub Actions do Pages
+├── .github/workflows/
+│   └── deploy.yml            # Automatyczne budowanie indeksu i wdrożenie na Pages
 ├── assets/
-│   ├── favicon.svg         # Favikona strony
-│   └── logo.svg            # Wektorowe logo ARstone
-├── .nojekyll               # Wyłączenie parsowania Jekyll dla szybszego ładowania
-├── index.html              # Główna strona HTML5
-├── style.css               # Responsywny arkusz stylów (Dark/Light mode)
-└── README.md               # Dokumentacja projektu
+│   ├── favicon.svg           # Favikona sygnetu ARstone
+│   └── logo.svg              # Wektorowe logo ARstone
+├── projects/                 # KATALOGI Z WYKONANYMI INWESTYCJAMI
+│   ├── 01-kuchnia-marmur-calacatta/           (zdjęcia 1.svg, 2.svg, 3.svg - kolejność 1,2,3)
+│   ├── 02-lazienka-granit-nero-marquina/      (zdjęcia 1.svg, 2.svg - kolejność 1,2)
+│   ├── 03-wyspa-kuchenna-kwarcyt-taj-mahal/   (zdjęcia nienumerowane - losowe)
+│   └── 04-schody-lewitujace-granit-star-galaxy/
+├── app.js                    # Silnik JS: animacja HTML5, cząsteczki, sortowanie, lightbox
+├── generate_projects.py      # Automatyczny generator indeksu projektów (projects.json)
+├── index.html                # Główny szablon HTML5 z sekcjami i sceną animacji
+├── projects.json             # Wygenerowany rejestr inwestycji
+├── style.css                 # Style CSS, motywy dark/light, responsywność
+└── .nojekyll                 # Wyłączenie Jekylla na GitHub Pages
 ```

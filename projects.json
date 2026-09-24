@@ -1,0 +1,56 @@
+[
+  {
+    "id": "01-kuchnia-marmur-calacatta",
+    "title": "Kuchnia Rezydencji Wilanów — Marmur Calacatta Gold",
+    "category": "Kuchnie & Blaty",
+    "description": "Monolityczna wyspa kuchenna oraz blaty robocze z marmuru Calacatta z ciągłością użylenia (bookmatch).",
+    "location": "Warszawa, Polska",
+    "is_random": false,
+    "cover": "projects/01-kuchnia-marmur-calacatta/1.svg",
+    "images": [
+      "projects/01-kuchnia-marmur-calacatta/1.svg",
+      "projects/01-kuchnia-marmur-calacatta/2.svg",
+      "projects/01-kuchnia-marmur-calacatta/3.svg"
+    ]
+  },
+  {
+    "id": "02-lazienka-granit-nero-marquina",
+    "title": "Łazienka Master — Czarny Marmur Nero Marquina",
+    "category": "Łazienki",
+    "description": "Wykończenie strefy prysznicowej i blat umywalkowy z kontrastowym białym użyleniem w polerze.",
+    "location": "Warszawa, Polska",
+    "is_random": false,
+    "cover": "projects/02-lazienka-granit-nero-marquina/1.svg",
+    "images": [
+      "projects/02-lazienka-granit-nero-marquina/1.svg",
+      "projects/02-lazienka-granit-nero-marquina/2.svg"
+    ]
+  },
+  {
+    "id": "03-wyspa-kuchenna-kwarcyt-taj-mahal",
+    "title": "Wyspa Kuchenna — Naturalny Kwarcyt Taj Mahal",
+    "category": "Kuchnie & Blaty",
+    "description": "Ekskluzywny kwarcyt brazylijski o perłowym odcieniu i odporności granitu.",
+    "location": "Warszawa, Polska",
+    "is_random": true,
+    "cover": "projects/03-wyspa-kuchenna-kwarcyt-taj-mahal/detal.svg",
+    "images": [
+      "projects/03-wyspa-kuchenna-kwarcyt-taj-mahal/detal.svg",
+      "projects/03-wyspa-kuchenna-kwarcyt-taj-mahal/front.svg",
+      "projects/03-wyspa-kuchenna-kwarcyt-taj-mahal/zblizenie.svg"
+    ]
+  },
+  {
+    "id": "04-schody-lewitujace-granit-star-galaxy",
+    "title": "Schody Wspornikowe — Granit Star Galaxy",
+    "category": "Schody & Posadzki",
+    "description": "Samonośne stopnie kamienne z głęboką czernią i miedziano-złotymi kryształami.",
+    "location": "Warszawa, Polska",
+    "is_random": false,
+    "cover": "projects/04-schody-lewitujace-granit-star-galaxy/1.svg",
+    "images": [
+      "projects/04-schody-lewitujace-granit-star-galaxy/1.svg",
+      "projects/04-schody-lewitujace-granit-star-galaxy/2.svg"
+    ]
+  }
+]

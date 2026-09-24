@@ -22,17 +22,26 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repozytorium
         uses: actions/checkout@v4
 
-      - name: Setup Pages
+      - name: Konfiguracja Pythona
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Automatyczne generowanie indeksu projektów ze zdjęć
+        run: |
+          python3 generate_projects.py
+
+      - name: Konfiguracja GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
+      - name: Upload artefaktów Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
-      - name: Deploy to GitHub Pages
+      - name: Wdrożenie na GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
