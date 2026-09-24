@@ -76,11 +76,50 @@ let activeGalleryImages = [];
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initMobileMenu();
+  loadSiteContent();
   loadProjects();
   initCraftAnimation();
   initContactForm();
   document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
+
+/* ==========================================================================
+   Ładowanie Treści z content.json (Łatwa edycja tekstów)
+   ========================================================================== */
+async function loadSiteContent() {
+  try {
+    const res = await fetch('./content.json');
+    if (!res.ok) return;
+    const data = await res.json();
+
+    // Automatyczne wypełnianie elementów ze znacznikiem data-content
+    document.querySelectorAll('[data-content]').forEach(el => {
+      const path = el.getAttribute('data-content').split('.');
+      let val = data;
+      for (const key of path) {
+        if (val && val[key] !== undefined) {
+          val = val[key];
+        } else {
+          val = null;
+          break;
+        }
+      }
+      if (val !== null) {
+        if (el.tagName === 'A' && el.getAttribute('href')?.startsWith('tel:')) {
+          el.setAttribute('href', `tel:${val.replace(/\s+/g, '')}`);
+          el.textContent = val;
+        } else if (el.tagName === 'A' && el.getAttribute('href')?.startsWith('mailto:')) {
+          el.setAttribute('href', `mailto:${val}`);
+          el.textContent = val;
+        } else {
+          el.textContent = val;
+        }
+      }
+    });
+  } catch (e) {
+    console.debug('content.json niedostępny lokalnie lub wczytano domyślny HTML:', e);
+  }
+}
 
 /* ==========================================================================
    Motyw Dark / Light

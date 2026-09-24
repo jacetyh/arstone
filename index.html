@@ -29,8 +29,8 @@
   <!-- Górny pasek nawigacyjny -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="#" class="nav-brand" aria-label="ARstone Strona Główna">
-        <img src="./assets/logo.svg" alt="ARstone Logo" class="nav-logo-img">
+      <a href="#" class="nav-brand" aria-label="AR STONE Strona Główna">
+        <img src="./assets/logo-official.png" alt="AR STONE Wykończenia Wnętrz Remonty Kamień" class="nav-logo-img">
       </a>
 
       <nav>
@@ -76,14 +76,14 @@
     <div class="container hero-content">
       <div class="hero-badge">
         <span style="display:inline-block; width:8px; height:8px; background:var(--accent-blue); border-radius:50%; box-shadow:0 0 8px var(--accent-blue);"></span>
-        Pracownia Kamieniarska ARstone
+        <span data-content="brand.badge">Kompleksowe Wykończenia Wnętrz &amp; Kamieniarstwo</span>
       </div>
       <h1 class="hero-title">
-        Naturalny Kamień w <br>
-        <span class="hero-title-highlight">Mistrzowskim Wydaniu</span>
+        <span data-content="hero.title_main">Mistrzowskie Wykończenia Wnętrz &amp;</span> <br>
+        <span class="hero-title-highlight" data-content="hero.title_highlight">Kamień Dekoracyjny</span>
       </h1>
-      <p class="hero-desc">
-        Tworzymy unikalne blaty kuchenne, wyspy monolityczne, luksusowe łazienki oraz schody. Łączymy tradycyjny kunszt ciosania kamienia z precyzyjną technologią obróbki CNC i cięcia wodnego.
+      <p class="hero-desc" data-content="hero.description">
+        Łączymy precyzyjne remonty, sztukę wykończeń pod klucz oraz szlachetny kamień dekoracyjny i spieki kwarcowe. Od projektu i wizji, przez stan surowy, po perfekcyjne detale.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">
@@ -95,8 +95,13 @@
           Przeglądaj Realizacje
         </a>
         <a href="#craft" class="btn btn-secondary">
-          <span>🔨</span> Zobacz Magię Obróbki
+          <span>🔨</span> Zobacz Warsztat &amp; Kamień
         </a>
+      </div>
+
+      <!-- Wizualizacja pracowni i rzemiosła AR STONE (nowo dodane zdjęcie) -->
+      <div class="hero-banner-card">
+        <img src="./assets/workshop-hero.png" alt="AR STONE Warsztat i Realizacje Kamieniarskie" class="hero-banner-img" loading="eager">
       </div>
 
       <div class="hero-stats">
@@ -109,8 +114,8 @@
           <span class="stat-label">Zrealizowanych projektów</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">0.1 mm</span>
-          <span class="stat-label">Dokładność obróbki CNC</span>
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Gwarancji jakości i precyzji</span>
         </div>
       </div>
     </div>
@@ -387,8 +392,8 @@
             </div>
             <div>
               <h4>Telefon kontaktowy</h4>
-              <p><a href="tel:+48500123456">+48 500 123 456</a></p>
-              <p style="font-size:0.8rem; color:var(--text-muted);">Poniedziałek – Piątek: 8:00 – 18:00</p>
+              <p><a href="tel:+48500123456" data-content="contact.phone">+48 500 123 456</a></p>
+              <p style="font-size:0.8rem; color:var(--text-muted);" data-content="contact.hours">Poniedziałek – Piątek: 8:00 – 18:00</p>
             </div>
           </div>
 
@@ -401,8 +406,8 @@
             </div>
             <div>
               <h4>E-mail do wycen</h4>
-              <p><a href="mailto:kontakt@arstone.pl">kontakt@arstone.pl</a></p>
-              <p style="font-size:0.8rem; color:var(--text-muted);">Odpowiadamy zwykle do 24 godzin</p>
+              <p><a href="mailto:kontakt@arstone.pl" data-content="contact.email">kontakt@arstone.pl</a></p>
+              <p style="font-size:0.8rem; color:var(--text-muted);" data-content="contact.response_time">Odpowiadamy zwykle do 24 godzin</p>
             </div>
           </div>
 
@@ -415,8 +420,8 @@
             </div>
             <div>
               <h4>Pracownia &amp; Showroom</h4>
-              <p>ul. Kamieniarska 12, Warszawa</p>
-              <p style="font-size:0.8rem; color:var(--text-muted);">Zapraszamy na prezentację próbek kamienia</p>
+              <p data-content="contact.address">ul. Kamieniarska 12, Warszawa</p>
+              <p style="font-size:0.8rem; color:var(--text-muted);">Zapraszamy na prezentację próbek kamienia i wykończeń</p>
             </div>
           </div>
         </div>
@@ -498,9 +503,9 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="./assets/logo.svg" alt="ARstone" style="height: 38px; width: auto;">
-          <p>
-            Pracownia kamieniarska specjalizująca się w precyzyjnej obróbce granitu, marmuru, kwarcytów i spieków kwarcowych na terenie całego kraju.
+          <img src="./assets/logo-official.png" alt="AR STONE Logo" style="height: 48px; width: auto; max-width: 200px; object-fit: contain;">
+          <p data-content="brand.tagline">
+            WYKOŃCZENIA WNĘTRZ | REMONTY | KAMIEŃ DEKORACYJNY
           </p>
         </div>
         <div class="footer-links-col">
