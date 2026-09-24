@@ -71,20 +71,15 @@
     </div>
   </header>
 
-  <!-- Sekcja Hero -->
-  <section class="hero-section" id="about">
-    <div class="container hero-content">
-      <div class="hero-badge">
-        <span style="display:inline-block; width:8px; height:8px; background:var(--accent-blue); border-radius:50%; box-shadow:0 0 8px var(--accent-blue);"></span>
-        <span data-content="brand.badge">Kompleksowe Wykończenia Wnętrz &amp; Kamieniarstwo</span>
-      </div>
-      <h1 class="hero-title">
-        <span data-content="hero.title_main">Mistrzowskie Wykończenia Wnętrz &amp;</span> <br>
-        <span class="hero-title-highlight" data-content="hero.title_highlight">Kamień Dekoracyjny</span>
-      </h1>
-      <p class="hero-desc" data-content="hero.description">
-        Łączymy precyzyjne remonty, sztukę wykończeń pod klucz oraz szlachetny kamień dekoracyjny i spieki kwarcowe. Od projektu i wizji, przez stan surowy, po perfekcyjne detale.
-      </p>
+  <!-- Sekcja Hero z panoramiczną grafiką w tle na samej górze strony -->
+  <section class="hero-wrapper" id="about">
+    <div class="hero-backdrop-stage">
+      <!-- Pusta strefa: gwarantuje, że centralne logo i napis na zdjęciu NIE SĄ NICZYM PRZYKRYTE -->
+      <div class="hero-spacer-uncovered" aria-hidden="true"></div>
+    </div>
+
+    <!-- Panel z przyciskami akcji, opisem i statystykami PONIŻEJ zdjęcia -->
+    <div class="container hero-content-panel">
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -94,15 +89,17 @@
           </svg>
           Przeglądaj Realizacje
         </a>
-        <a href="#craft" class="btn btn-secondary">
-          <span>🔨</span> Zobacz Warsztat &amp; Kamień
+        <a href="#craft" class="btn btn-wood">
+          <span>🔨</span> Zobacz Magię Obróbki Kamienia
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          Darmowa Wycena &rarr;
         </a>
       </div>
 
-      <!-- Wizualizacja pracowni i rzemiosła AR STONE (nowo dodane zdjęcie) -->
-      <div class="hero-banner-card">
-        <img src="./assets/workshop-hero.png" alt="AR STONE Warsztat i Realizacje Kamieniarskie" class="hero-banner-img" loading="eager">
-      </div>
+      <p class="hero-lead-text" data-content="hero.description">
+        Łączymy precyzyjne remonty, sztukę wykończeń pod klucz oraz szlachetny kamień dekoracyjny i spieki kwarcowe. Od projektu i wizji, przez stan surowy, po perfekcyjne detale.
+      </p>
 
       <div class="hero-stats">
         <div class="stat-item">
