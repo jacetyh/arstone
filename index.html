@@ -19,6 +19,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+  <!-- Preload kluczowych grafik dla natychmiastowego renderowania (LCP Optimization) -->
+  <link rel="preload" as="image" href="./assets/workshop-hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/logo-official.webp" type="image/webp">
+
   <!-- Style CSS -->
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -30,7 +34,10 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="#" class="nav-brand" aria-label="AR STONE Strona Główna">
-        <img src="./assets/logo-official.png" alt="AR STONE Wykończenia Wnętrz Remonty Kamień" class="nav-logo-img">
+        <picture>
+          <source srcset="./assets/logo-official.webp" type="image/webp">
+          <img src="./assets/logo-official.png" alt="AR STONE Wykończenia Wnętrz Remonty Kamień" class="nav-logo-img" width="220" height="52" fetchpriority="high">
+        </picture>
       </a>
 
       <nav>
@@ -500,7 +507,10 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="./assets/logo-official.png" alt="AR STONE Logo" style="height: 48px; width: auto; max-width: 200px; object-fit: contain;">
+          <picture>
+            <source srcset="./assets/logo-official.webp" type="image/webp">
+            <img src="./assets/logo-official.png" alt="AR STONE Logo" style="height: 48px; width: auto; max-width: 200px; object-fit: contain;" loading="lazy">
+          </picture>
           <p data-content="brand.tagline">
             WYKOŃCZENIA WNĘTRZ | REMONTY | KAMIEŃ DEKORACYJNY
           </p>

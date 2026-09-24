@@ -321,7 +321,9 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-image: url('./assets/workshop-hero.png');
+  background-image: url('./assets/workshop-hero.webp');
+  background-image: -webkit-image-set(url('./assets/workshop-hero.webp') 1x, url('./assets/workshop-hero.png') 1x);
+  background-image: image-set(url('./assets/workshop-hero.webp') type('image/webp'), url('./assets/workshop-hero.png') type('image/png'));
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
