@@ -1,0 +1,309 @@
+/* ==========================================================================
+   ARstone - Główny arkusz stylów CSS
+   ========================================================================== */
+
+:root {
+  --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Ciemny motyw (domyślny) */
+  --bg-color: #090d16;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #172554 0%, #090d16 80%);
+  --card-bg: rgba(15, 23, 42, 0.75);
+  --card-border: rgba(56, 189, 248, 0.15);
+  --card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 40px -10px rgba(56, 189, 248, 0.15);
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-highlight: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.25);
+  --btn-bg: rgba(255, 255, 255, 0.08);
+  --btn-bg-hover: rgba(56, 189, 248, 0.2);
+  --btn-border: rgba(255, 255, 255, 0.15);
+  --badge-bg: rgba(56, 189, 248, 0.1);
+  --badge-border: rgba(56, 189, 248, 0.25);
+  --badge-text: #7dd3fc;
+}
+
+[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #e0f2fe 0%, #f1f5f9 85%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(14, 165, 233, 0.2);
+  --card-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 30px -5px rgba(56, 189, 248, 0.15);
+  --text-primary: #0f172a;
+  --text-muted: #64748b;
+  --text-highlight: #0284c7;
+  --accent-glow: rgba(14, 165, 233, 0.15);
+  --btn-bg: rgba(15, 23, 42, 0.05);
+  --btn-bg-hover: rgba(14, 165, 233, 0.15);
+  --btn-border: rgba(15, 23, 42, 0.12);
+  --badge-bg: rgba(2, 132, 199, 0.1);
+  --badge-border: rgba(2, 132, 199, 0.2);
+  --badge-text: #0369a1;
+}
+
+/* Reset i bazowe style */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-color);
+  background-image: var(--bg-gradient);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+  line-height: 1.6;
+}
+
+/* Dekoracyjne tło z subtelną siatką */
+.bg-decor {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+}
+
+/* Główny kontener */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+/* Górny pasek z nawigacją i przełącznikiem motywu */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--badge-text);
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+}
+
+.theme-toggle {
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.theme-toggle:hover {
+  background: var(--btn-bg-hover);
+  border-color: var(--text-highlight);
+  transform: translateY(-1px);
+}
+
+/* Główna sekcja z logo */
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0;
+  text-align: center;
+}
+
+/* Karta prezentacyjna logo */
+.logo-card {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: 2rem;
+  padding: 4rem 2.5rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.logo-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--text-highlight), transparent);
+  border-radius: 9999px;
+}
+
+/* Wrapper logo */
+.logo-display {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  animation: fadeInScale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.logo-image {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px var(--accent-glow));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 15px 35px var(--accent-glow));
+}
+
+/* Opis pod logo */
+.logo-description {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 500px;
+}
+
+/* Przyciski akcji */
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 0.875rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0369a1, #1d4ed8);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--btn-bg-hover);
+  border-color: var(--text-highlight);
+  transform: translateY(-2px);
+}
+
+/* Stopka */
+footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+footer a {
+  color: var(--text-highlight);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animacje */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsywność */
+@media (max-width: 640px) {
+  .logo-card {
+    padding: 2.5rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .logo-description {
+    font-size: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
